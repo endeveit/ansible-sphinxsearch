@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  remote_user: root
+  remote_user: "{{ sphinx_user }}"
   become: yes
 
   pre_tasks:
@@ -8,8 +8,8 @@
       copy:
         src: test.xml
         dest: /tmp/test.xml
-        owner: root
-        group: root
+        owner: "{{ sphinx_user }}"
+        group: "{{ sphinx_group }}"
         mode: 0644
 
   roles:

@@ -3,8 +3,8 @@
   template:
     src: sphinxsearch.default.j2
     dest: /etc/default/sphinxsearch
-    owner: root
-    group: root
+    owner: "{{ sphinx_user }}"
+    group: "{{ sphinx_group }}"
     mode: 0644
   when: ansible_os_family == 'Debian'
 
@@ -12,8 +12,8 @@
   template:
     src: sphinx.conf.j2
     dest: '/etc/sphinxsearch/sphinx.conf'
-    owner: root
-    group: root
+    owner: "{{ sphinx_user }}"
+    group: "{{ sphinx_group }}"
     mode: 0644
   notify:
     - restart sphinx

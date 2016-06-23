@@ -34,3 +34,6 @@ sphinx_indexes:
     - 'source = test_source'
     - 'path = /var/lib/sphinxsearch/data/test_index'
     - 'charset_type = utf-8'
+
+sphinx_user: 'root'
+sphinx_group: 'root'
