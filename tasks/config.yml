@@ -21,4 +21,5 @@
 - name: Rotate all indexes
   command: /usr/bin/indexer --rotate --all
   ignore_errors: True
+  changed_when: False
   when: sphinx_rotate_all
