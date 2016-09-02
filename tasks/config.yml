@@ -18,8 +18,13 @@
   notify:
     - restart sphinx
 
+- name: Check if we have indexes
+  shell: ls /var/lib/sphinxsearch/data/*sph
+  ignore_errors: True
+  register: check_indexes
+
 - name: Rotate all indexes
   command: /usr/bin/indexer --rotate --all
   ignore_errors: True
   changed_when: False
-  when: sphinx_rotate_all
+  when: (sphinx_rotate_all and check_indexes.rc != 0) or sphinx_force_rotate

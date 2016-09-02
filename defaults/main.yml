@@ -21,6 +21,7 @@ sphinx_indexer:
 
 # Whether to rotate indexes or not
 sphinx_rotate_all: False
+sphinx_force_rotate: False
 
 # sources settings
 sphinx_sources:
