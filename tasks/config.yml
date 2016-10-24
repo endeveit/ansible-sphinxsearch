@@ -21,6 +21,7 @@
 - name: Check if we have indexes
   shell: ls /var/lib/sphinxsearch/data/*sph
   ignore_errors: True
+  changed_when: False
   register: check_indexes
 
 - name: Rotate all indexes
