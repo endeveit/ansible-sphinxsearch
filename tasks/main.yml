@@ -3,8 +3,8 @@
 
 - include: config.yml
 
-- name: Be sure sphinxsearch is running and enabled
+- name: Be sure sphinxsearch is enabled and started
   service:
     name: sphinxsearch
-    state: running
+    state: started
     enabled: yes
